@@ -12,7 +12,6 @@ public sealed class Plugin : IDalamudPlugin
 
     public readonly WindowSystem WindowSystem = new("SamplePlugin");
     private MainWindow MainWindow { get; init; }
-
     public Plugin(IDalamudPluginInterface pluginInterface)
     {
         MainWindow = new MainWindow(this);
@@ -26,6 +25,7 @@ public sealed class Plugin : IDalamudPlugin
 
         pluginInterface.UiBuilder.Draw += DrawUI;
         pluginInterface.UiBuilder.OpenMainUi += ToggleMainUI;
+
     }
 
     public void Dispose()
